@@ -14,6 +14,19 @@ require_once './part/HashBox.php';
 
 $hashbox = new Hashbox(10);
 $hashbox->add(1);
+$hashbox->add(11);
+$hashbox->add(12);
+$hashbox->add(21);
+$hashbox->add(101);
+$hashbox->add(121);
+$hashbox->add(25);
+$hashbox->add(5);
+$hashbox->add(90);
 
+$hashbox->search(1);
+$hashbox->search(5);
+$hashbox->search(15);
+$hashbox->search(25);
+$hashbox->search(100);
 
 ?>

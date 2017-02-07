@@ -22,7 +22,6 @@ class HashBox{
 
     public function add($value){
         $key = self::createHashCode($value);
-        // 次のlistへのアドレス
         $address = null;
         if($this->list[$key]){
             $address = $this->list[$key];
@@ -41,14 +40,24 @@ class HashBox{
             $address = $address->getNextAddress();
         }
 
-        $this->list[$key] = new Bucket($value,null);
+        $this->list[$key] = new Bucket($value,$this->list[$key]);
         return true;
     }
-
-
-
-
-
-
+    public function search($value){
+        $key = self::createHashCode($value);
+        $address = null;
+        if($this->list[$key]){
+            $address = $this->list[$key];
+        }
+        // 次のリストが格納されているところまで処理の繰り返し
+        while($address !== null){
+            // 値の重複
+            if($address->getValue() === $value){
+                echo $value."発見!!!!!!!!!!!!!!!!!!\n";
+            }
+            // 次のアドレスへ移動
+            $address = $address->getNextAddress();
+        }
+    }
 }
 ?>
