@@ -42,10 +42,7 @@ class BinaryTree{
     */
 
     public static function searchTree($value,$tree){
-        var_dump($tree);
-        sleep(2);
         if($tree->value === $value){
-            var_dump("OK");
             return true;
         }
     	else if($tree->value < $value){
