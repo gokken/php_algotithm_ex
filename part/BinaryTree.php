@@ -62,7 +62,7 @@ class BinaryTree{
             else{
                 if(self::searchTree($value,$tree->right)){
                     return true;
-                };
+                }
             }
         }
         return false;
