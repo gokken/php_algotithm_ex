@@ -44,7 +44,7 @@ function mergeSort(&$arr,$first,$last){
 $numbers = range(1, 8);
 
 shuffle($numbers);
-mergeSort($numbers,0,count($numbers))-1;
+mergeSort($numbers,0,count($numbers)-1);
 
 var_dump($numbers);
 
